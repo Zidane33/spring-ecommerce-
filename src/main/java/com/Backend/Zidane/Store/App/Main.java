@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableJpaRepositories("com.Backend.Zidane.Store.App")
 @SpringBootApplication
-public class AppApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 }
