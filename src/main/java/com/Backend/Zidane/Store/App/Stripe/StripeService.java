@@ -4,14 +4,16 @@ import com.stripe.Stripe;
 import com.stripe.exception.*;
 import com.stripe.model.Charge;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.naming.AuthenticationException;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class StripeService {
-    @Value("{STRIPE_SECRET_KEY}")
+    @Value("${STRIPE_SECRET_KEY}")
     private String secretKey;
 
     @PostConstruct
@@ -20,7 +22,7 @@ public class StripeService {
     }
 
     public  Charge charge(ChargeRequest chargeRequest)
-            throws AuthenticationException, StripeException {
+            throws AuthenticationException, StripeException, InvalidRequestException, ApiConnectionException, CardException, ApiException {
         Map<String, Object> chargeParams = new HashMap<>();
         chargeParams.put("amount", chargeRequest.getAmount());
         chargeParams.put("currency", chargeRequest.getCurrency());
