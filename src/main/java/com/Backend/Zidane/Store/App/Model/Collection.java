@@ -18,8 +18,8 @@ public class Collection implements Serializable {
     private String title;
 
     @NotBlank
-    @Column(name = "route")
-    private String route;
+    @Column(name = "image")
+    private String image;
 
     public long getId() {
         return id;
@@ -37,11 +37,11 @@ public class Collection implements Serializable {
         this.title = title;
     }
 
-    public String getRoute() {
-        return route;
+    public String getImage() {
+        return image;
     }
 
-    public void setRoute(String route) {
-        this.route = route;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
