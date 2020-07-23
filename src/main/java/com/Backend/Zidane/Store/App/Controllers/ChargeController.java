@@ -16,11 +16,11 @@ public class ChargeController {
     @Autowired
     private StripeService paymentsService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://zidane-store-react-bucket.s3-website-us-east-1.amazonaws.com")
     @PostMapping
     public void charge(@RequestBody ChargeRequest chargeRequest)
             throws StripeException, AuthenticationException {
-        chargeRequest.setDescription("Example charge");
+        chargeRequest.setDescription("");
         chargeRequest.setCurrency(ChargeRequest.Currency.CAD);
         Charge charge = paymentsService.charge(chargeRequest);
     }

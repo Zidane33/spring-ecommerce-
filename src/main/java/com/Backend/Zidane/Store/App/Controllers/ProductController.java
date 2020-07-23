@@ -17,11 +17,10 @@ public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://zidane-store-react-bucket.s3-website-us-east-1.amazonaws.com")
     @GetMapping
     public List<Product> getAllProducts() {
         List<Product> products = productRepository.findAll();
-        System.out.println(products);
         return products;
     }
 }

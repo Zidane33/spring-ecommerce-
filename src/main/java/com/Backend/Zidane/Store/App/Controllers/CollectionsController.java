@@ -17,7 +17,7 @@ public class CollectionsController {
     @Autowired
     CollectionRepository collectionRepository;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://zidane-store-react-bucket.s3-website-us-east-1.amazonaws.com")
     @GetMapping
     public List<Collection> getAllCollections() {
         List<Collection> collections = collectionRepository.findAll();
